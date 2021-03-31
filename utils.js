@@ -36,3 +36,13 @@ export function createCryptid(cryptid) {
     
     return ul;
 }
+
+export function findById(array, id) {
+    for (let item of array) {
+        if (item.id === id) {
+            return item;
+        } else {
+            return null;
+        }
+    }
+}
