@@ -2,6 +2,8 @@
 // import { example } from '../example.js';
 import { createCryptid, findById, calcItemTotal } from '../utils.js';
 import { cryptid } from '../cryptids.js';
+import { cryptidCart } from '../cart/cart.js';
+import { cartLineItemDom } from '../cart/render-line-items.js';
 
 const test = QUnit.test;
 
@@ -22,7 +24,10 @@ test('test createCryptid function', (expect) => {
 test('test findById function', (expect) => {
     const expected = cryptid[0];
     const actual = findById(cryptid, 'a1');
+    const expected2 = cryptid[1];
+    const actual2 = findById(cryptid, 'a2');
     expect.equal(actual, expected);
+    expect.equal(actual2, expected2);
 });
 
 test('test calcItemTotal', (expect) => {
@@ -30,3 +35,13 @@ test('test calcItemTotal', (expect) => {
     const actual = calcItemTotal(3, 499.99);
     expect.equal(actual, expected);
 });
+
+test('test cartLineItemDom', (expect) => {
+    const expected = '<tr><td>Mongolian Death Worm</td><td>3</td><td>599.99</td></tr>';
+    const worm = findById(cryptid, 'a2');
+    const lineItem = cartLineItemDom(cryptidCart[0], worm);
+    const actual = lineItem.outerHTML;
+    expect.equal(actual, expected);
+});
+
+              
