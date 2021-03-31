@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
-import { createCryptid, findById } from '../utils.js';
+import { createCryptid, findById, calcItemTotal } from '../utils.js';
 import { cryptid } from '../cryptids.js';
 
 const test = QUnit.test;
@@ -22,5 +22,11 @@ test('test createCryptid function', (expect) => {
 test('test findById function', (expect) => {
     const expected = cryptid[0];
     const actual = findById(cryptid, 'a1');
+    expect.equal(actual, expected);
+});
+
+test('test calcItemTotal', (expect) => {
+    const expected = 1499.97;
+    const actual = calcItemTotal(3, 499.99);
     expect.equal(actual, expected);
 });
