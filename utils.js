@@ -46,3 +46,7 @@ export function findById(array, id) {
         }
     }
 }
+
+export function calcItemTotal(quantity, amount) {
+    return quantity * amount;
+}
