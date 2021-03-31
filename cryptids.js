@@ -5,7 +5,7 @@ const a1 = {
     image: 'https://www.placecage.com/200/200/',
     description: 'I have a goat\'s head, a bat\'s wings, two legs with cloven hooves, and a forked tail.',
     type: 'Winged',
-    price: 999999999,
+    price: 99.99,
 };
 
 const a2 = {
