@@ -37,3 +37,8 @@ li {
     background-color: bisque;
     width: 200px;
 }
+
+table, th, td {
+    table-layout: auto;
+    border: black 1px solid;
+}
