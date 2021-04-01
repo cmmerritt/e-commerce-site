@@ -1,5 +1,5 @@
 import { findById } from '../utils.js';
-import { cartLineItemDom, totalLineItemDom } from '../cart/render-line-items.js';
+import { cartLineItemDom, totalLineItemDom } from './render-line-items.js';
 import { cryptid } from '../cryptids.js';
 import { cart } from './cart.js';
 
@@ -13,3 +13,11 @@ for (let cartItem of cart) {
 const totalRow = totalLineItemDom(cart, cryptid);
 
 document.getElementById('cart-items').append(totalRow);
+
+const button = document.getElementById('place-order-button');
+
+button.addEventListener('click', () => {
+    alert(JSON.stringify(cart, true, 2));
+    localStorage.clear();
+    window.location = '/';
+});
