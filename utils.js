@@ -45,6 +45,18 @@ export function findById(array, id) {
     }
 }
 
-export function calcItemTotal(quantity, amount) {
-    return quantity * amount;
+export function calcItemTotal(quantity, price) {
+    return quantity * price;
+}
+
+export function calcCartTotal(cartArray, productsArray) {
+    let cartTotal = 0;
+    for (let item of cartArray) {
+        let itemId = item.id;
+        let productArrayItem = findById(productsArray, itemId);
+        let itemPrice = productArrayItem.price;
+        let itemTotal = calcItemTotal(item.quantity, itemPrice);
+        cartTotal += itemTotal;
+    }
+    return cartTotal;
 }

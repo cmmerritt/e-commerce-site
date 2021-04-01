@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
-import { createCryptid, findById, calcItemTotal } from '../utils.js';
+import { createCryptid, findById, calcItemTotal, calcCartTotal } from '../utils.js';
 import { cryptid } from '../cryptids.js';
 import { cryptidCart } from '../cart/cart.js';
 import { cartLineItemDom } from '../cart/render-line-items.js';
@@ -44,4 +44,9 @@ test('test cartLineItemDom', (expect) => {
     expect.equal(actual, expected);
 });
 
+test('test calcCartTotal', (expect) => {
+    const expected = (599.99 * 3) + (7999.99 * 5) + (99.99 * 10);
+    const actual = calcCartTotal(cryptidCart, cryptid);
+    expect.equal(actual, expected);
+});
               
