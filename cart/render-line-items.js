@@ -1,3 +1,5 @@
+import { calcCartTotal } from '../utils.js';
+
 export function cartLineItemDom(cartItem, cryptid) {
     //create tr for product to live in
     //create tds for name, quantity, and price
@@ -12,5 +14,21 @@ export function cartLineItemDom(cartItem, cryptid) {
 
     tr.append(tdName, tdQuantity, tdPrice);
 
+    return tr;
+}
+
+export function totalLineItemDom(cartArray, productsArray) {
+    let cartTotal = calcCartTotal(cartArray, productsArray);
+    
+    const tr = document.createElement('tr');
+
+    const td1 = document.createElement('td');
+    const td2 = document.createElement('td');
+    const td3 = document.createElement('td');
+
+    td3.textContent = cartTotal;
+
+    tr.append(td1, td2, td3);
+    
     return tr;
 }
