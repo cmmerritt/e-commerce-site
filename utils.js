@@ -1,3 +1,5 @@
+import { addItemToCart } from '../cart/cart.js';
+
 export function createCryptid(cryptid) {
     const ul = document.createElement('ul');
 
@@ -31,6 +33,10 @@ export function createCryptid(cryptid) {
     const button = document.createElement('button');
     button.textContent = 'Add to cart';
 
+    button.addEventListener('click', () => {
+        addItemToCart(cryptid.id);
+    });
+
 
     ul.append(liID, liName, liPlace, image, liDesc, liType, liPrice, button);
     
@@ -60,3 +66,4 @@ export function calcCartTotal(cartArray, productsArray) {
     }
     return cartTotal;
 }
+

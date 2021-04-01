@@ -1,15 +1,15 @@
 import { findById } from '../utils.js';
 import { cartLineItemDom, totalLineItemDom } from '../cart/render-line-items.js';
-import { cryptidCart } from './cart.js';
 import { cryptid } from '../cryptids.js';
+import { cart } from './cart.js';
 
-for (let cartItem of cryptidCart) {
+for (let cartItem of cart) {
     //find cryptid from array of all
     const crpytidMatch = findById(cryptid, cartItem.id);
     const tr = cartLineItemDom(cartItem, crpytidMatch);
     document.getElementById('cart-items').append(tr);
 }
 
-const totalRow = totalLineItemDom(cryptidCart, cryptid);
+const totalRow = totalLineItemDom(cart, cryptid);
 
 document.getElementById('cart-items').append(totalRow);
