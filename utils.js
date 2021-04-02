@@ -45,7 +45,10 @@ export function createCryptid(cryptid) {
     }
 
     button.addEventListener('click', () => {
-        addItemToCart(cryptid.id);
+        const indexChosen = dropdown.selectedIndex;
+        const quantity = indexChosen + 1;
+        console.log(quantity);
+        addItemToCart(cryptid.id, quantity);
     });
 
 

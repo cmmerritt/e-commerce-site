@@ -6,24 +6,23 @@ export const cart = getCart();
 // quantity should change according to dropdown number selected
 // find number selected (by id on option?) & add corresponding number to quantity
 
-export function addItemToCart(productId) {
+export function addItemToCart(productId, numberSelected) {
     const matchingItem = findById(cart, productId);
-    const dropMenu = document.getElementById(productId);
-    const numSelected = dropMenu.value;
     if (matchingItem) {
-        matchingItem.quantity += Number(numSelected);
+        matchingItem.quantity += numberSelected;
     } else {
         const item = {
             id: productId,
-            quantity: Number(numSelected),
+            quantity: numberSelected,
         };
+        console.log(item);
         cart.push(item);
     } 
     setCart(cart);
+    console.log(cart);
 }
 
-/* 
-export const cryptidCart = [
+/* export const cryptidCart = [
     {
         id: 'a2',
         quantity: 3,
@@ -37,4 +36,4 @@ export const cryptidCart = [
         quantity: 10,
     },
 ];
-  */
+ */
