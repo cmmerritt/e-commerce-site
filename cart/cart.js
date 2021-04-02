@@ -4,14 +4,19 @@ import { setCart } from './cart-api.js';
 
 export const cart = getCart();
 
+// quantity should change according to dropdown number selected
+// find number selected (by id on option?) & add corresponding number to quantity
+
 export function addItemToCart(productId) {
     const matchingItem = findById(cart, productId);
+    const dropMenu = document.getElementById(productId);
+    const numSelected = dropMenu.value;
     if (matchingItem) {
-        matchingItem.quantity++;
+        matchingItem.quantity += Number(numSelected);
     } else {
         const item = {
             id: productId,
-            quantity: 1,
+            quantity: Number(numSelected),
         };
         cart.push(item);
     } 
