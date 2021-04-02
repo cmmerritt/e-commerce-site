@@ -33,12 +33,23 @@ export function createCryptid(cryptid) {
     const button = document.createElement('button');
     button.textContent = 'Add to cart';
 
+    const dropdown = document.createElement('select');
+    dropdown.name = 'quantity';
+    dropdown.id = `${cryptid.id}`;
+    let i = 1;
+    for (i; i <= 10; i++) {
+        let number = document.createElement('option');
+        number.value = i;
+        number.textContent = i;
+        dropdown.append(number);
+    }
+
     button.addEventListener('click', () => {
         addItemToCart(cryptid.id);
     });
 
 
-    ul.append(liID, liName, liPlace, image, liDesc, liType, liPrice, button);
+    ul.append(liID, liName, liPlace, image, liDesc, liType, liPrice, button, dropdown);
     
     return ul;
 }
