@@ -1,6 +1,5 @@
-import { getCart } from './cart-api.js';
+import { getCart, setCart } from './cart-api.js';
 import { findById } from '../utils.js';
-import { setCart } from './cart-api.js';
 
 export const cart = getCart();
 

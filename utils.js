@@ -1,4 +1,4 @@
-import { addItemToCart } from '../cart/cart.js';
+import { addItemToCart } from './cart/cart.js';
 
 export function createCryptid(cryptid) {
     const ul = document.createElement('ul');
