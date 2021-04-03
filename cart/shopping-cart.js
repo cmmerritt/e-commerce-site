@@ -19,5 +19,5 @@ const button = document.getElementById('place-order-button');
 button.addEventListener('click', () => {
     alert(JSON.stringify(cart, true, 2));
     localStorage.clear();
-    window.location = '/';
+    window.location = '../';
 });

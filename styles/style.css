@@ -81,6 +81,16 @@ header img {
 p {
     margin: var(--gutter);
 }
+
+ul {
+    display: inline-block;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+}
+
   
 footer {
     position: fixed;

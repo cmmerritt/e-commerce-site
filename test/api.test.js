@@ -50,8 +50,7 @@ test('setCart should store cart in localStorage', (expect) => {
 });
 
 test('addItemToCart should add chosen item and quantity', (expect) => {
-    const stringyCart = JSON.stringify(testCart);
-    localStorage.setItem('CART', stringyCart);
+
     addItemToCart('a5', 1);
 
     const actual = JSON.parse(localStorage.getItem('CART'));
