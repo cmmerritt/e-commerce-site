@@ -3,6 +3,8 @@ import { addItemToCart } from './cart/cart.js';
 export function createCryptid(cryptid) {
     const ul = document.createElement('ul');
 
+    ul.classList.add('cryptid');
+
     const liID = document.createElement('li');
     liID.classList.add('id');
     liID.textContent = cryptid.id;

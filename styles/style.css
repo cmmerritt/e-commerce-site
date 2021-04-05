@@ -1,19 +1,12 @@
 
 body {
-    /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
-    /* --color1: hsla(349, 69%, 76%, 1);
-    --color2: hsla(207, 67%, 44%, 1);
-    --color3: hsla(200, 61%, 56%, 1);
-    --color4: hsla(187, 41%, 94%, 1);
-    --color5: hsla(170, 28%, 95%, 1); */
-
-    /* --color1: hsla(45, 86%, 83%, 1);
-    --color2: hsla(135, 65%, 98%, 1);
-    --color3: hsla(315, 37%, 86%, 1);
-    --color4: hsla(45, 73%, 98%, 1);
-    --color5: hsla(224, 40%, 79%, 1); */
+    --davys-grey: hsla(30, 5%, 36%, 1);
+    --rocket-metallic: hsla(21, 6%, 49%, 1);
+    --olivine: hsla(83, 31%, 65%, 1);
+    --tea-green: hsla(90, 97%, 86%, 1);
+    --nyanza: hsla(80, 77%, 93%, 1);
     
-    --header-height: 80px;
+    --header-height: 100px;
     --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
     --gutter: 30px;
     --footer-height: 25px;
@@ -23,8 +16,8 @@ body {
 }
 
 main {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     justify-content: center;
     align-items: center;
     margin-bottom: calc(var(--footer-height));
@@ -35,9 +28,7 @@ section {
     width: 1000px;
     max-width: 80%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    text-align: center; 
     padding-top: var(--gutter);
     padding-bottom: var(--gutter);
     margin-top: var(--gutter);
@@ -45,10 +36,19 @@ section {
     border: solid 2px var(--color1);
 }
 
-header {
+p {
+    margin: var(--gutter);
     display: flex;
-    justify-content: flex-end;
-    background-color: var(--color3);
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+}
+  
+
+header {
+    /* display: flex;
+    justify-content: center; */
+    background-color: var(--nyanza);
     height: var(--header-height);
     box-shadow: var(--shadow);
 }
@@ -60,38 +60,43 @@ footer {
     box-shadow: var(--shadow);
 }
 
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.cryptid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: bisque;
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+}
+
+
 
 h2 {
     font-size: 1.8rem;
     font-weight: bold;
 }
 
-.gutter-right {
-    margin-right: 20px;
+table, th, td {
+    table-layout: auto;
+    border: black 1px solid;
 }
 
-.main-logo {
-    animation: pulse 5s infinite ease-in-out;
+.gutter-right {
+    margin-right: 20px;
 }
 
 header img {
     height: var(--header-height);
 }
 
-p {
-    margin: var(--gutter);
-}
-
-ul {
-    display: inline-block;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 10px;
-    padding: 10px;
-    width: 200px;
-}
-
-  
 footer {
     position: fixed;
     width: 100%;
