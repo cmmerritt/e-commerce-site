@@ -28,12 +28,13 @@ section {
     width: 1000px;
     max-width: 80%;
     display: flex;
-    text-align: center; 
-    padding-top: var(--gutter);
-    padding-bottom: var(--gutter);
+    flex-direction: column;
+    text-align: left;
+
     margin-top: var(--gutter);
     margin-bottom: var(--gutter);
     border: solid 2px var(--color1);
+    margin-left: 10px;
 }
 
 p {
@@ -87,10 +88,20 @@ h2 {
 table, th, td {
     table-layout: auto;
     border: black 1px solid;
+    align-content: center;
+}
+
+
+.links {
+    display: flex;
 }
 
 .gutter-right {
     margin-right: 20px;
+}
+
+#place-order-button {
+    width: 100px;
 }
 
 header img {

@@ -30,7 +30,10 @@ export function createCryptid(cryptid) {
 
     const liPrice = document.createElement('li');
     liPrice.classList.add('price');
-    liPrice.textContent = cryptid.price;
+    liPrice.textContent = cryptid.price.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    });
 
     const button = document.createElement('button');
     button.textContent = 'Add to cart';
@@ -49,7 +52,6 @@ export function createCryptid(cryptid) {
     button.addEventListener('click', () => {
         const indexChosen = dropdown.selectedIndex;
         const quantity = indexChosen + 1;
-        console.log(quantity);
         addItemToCart(cryptid.id, quantity);
     });
 
@@ -80,6 +82,9 @@ export function calcCartTotal(cartArray, productsArray) {
         let itemTotal = calcItemTotal(item.quantity, itemPrice);
         cartTotal += itemTotal;
     }
-    return cartTotal;
+    return cartTotal.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    });
 }
 
