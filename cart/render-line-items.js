@@ -10,7 +10,10 @@ export function cartLineItemDom(cartItem, cryptid) {
 
     tdName.textContent = cryptid.name;
     tdQuantity.textContent = cartItem.quantity;
-    tdPrice.textContent = cryptid.price;
+    tdPrice.textContent = cryptid.price.toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    });
 
     tr.append(tdName, tdQuantity, tdPrice);
 
